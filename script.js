@@ -1,28 +1,17 @@
-let data = {
-  "ajju246455@gmail.com": "password1",
-  "ajay@gmail.com": "password2",
-  "hello123@gmail.com": "password3",
-  "hey5@gmail.com": "password4",
-  "user1234@gmail.com": "password5",
-};
-
 function login() {
   let username = document.getElementById("username").value;
   let password = document.getElementById("password").value;
 
   if (username && password) {
-    if (data[username] && data[username] === password) {
-      let userAuth = { username: username, password: password };
-      localStorage.setItem("authorization", JSON.stringify({ userAuth }));
-      document.getElementById("loginForm").classList.remove("flex");
-      document.getElementById("loginForm").classList.add("hidden");
-      document.getElementById("todoList").classList.add("flex");
-      document.getElementById("todoList").classList.remove("hidden");
-    } else {
-      alert("Email & Password in code description please check there🙏");
-    }
+    // Accept all emails and passwords
+    let userAuth = { username: username, password: password };
+    localStorage.setItem("authorization", JSON.stringify({ userAuth }));
+    document.getElementById("loginForm").classList.remove("flex");
+    document.getElementById("loginForm").classList.add("hidden");
+    document.getElementById("todoList").classList.add("flex");
+    document.getElementById("todoList").classList.remove("hidden");
   } else {
-    alert("Email & Password in code description please check there🙏");
+    alert("Please enter both email and password.");
   }
 }
 
